@@ -1,7 +1,5 @@
 'use strict';
 
-const { DataTypes } = require('sequelize');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -14,14 +12,14 @@ module.exports = {
       },
       permissionId: {
         type: Sequelize.INTEGER,
-        reference:{
+        references:{
             model:'Permission',
             key:'id'
         }
       },
       rolePermissionId:{
-        type:DataTypes.INTEGER,
-        reference:{
+        type:Sequelize.INTEGER,
+        references:{
             model:'RolePermission',
             key:'id'
         }
