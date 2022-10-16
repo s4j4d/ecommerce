@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   voucher.init({
     title: DataTypes.STRING,
-    cost: DataTypes.DECIMAL,
+    cost: DataTypes.INTEGER,
     supplier: DataTypes.STRING
   }, {
     sequelize,

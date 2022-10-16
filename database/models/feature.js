@@ -17,13 +17,6 @@ module.exports = (sequelize, DataTypes) => {
   Feature.init({
     name: DataTypes.STRING
   },
-  // CategoryId: {
-  //   type: Sequelize.ARRAY(Sequelize.INTEGER),
-  //   references: {
-  //     model: Category,
-  //     key: 'id'
-  //   }
-  // }, //mTOn
    {
     sequelize,
     modelName: 'Feature',

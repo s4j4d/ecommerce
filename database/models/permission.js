@@ -3,24 +3,21 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Seller extends Model {
+  class Permission extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Seller.belongsTo(models.User)
-      Seller.belongsTo(models.Product)
+      Permission.belongsToMany(models.RolePermission , {through:"ThroughPermission"})
     }
   }
-  Seller.init({
-    color: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    qty: DataTypes.INTEGER
+  Permission.init({
+    description: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Seller',
+    modelName: 'Permission',
   });
-  return Seller;
+  return Permission;
 };
