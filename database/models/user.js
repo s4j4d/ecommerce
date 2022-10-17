@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, JSONB, INTEGER, ARRAY
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -13,12 +13,16 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.hasMany(models.Discount)
       User.hasOne(models.Profile)
+      User.hasOne(models.Cart)
+      User.hasMany(models.Order)
+      // User.belongsToMany(models.Permission , {through:models.GroupPermission})
     }
   }
   User.init({
     name: DataTypes.STRING,
     password: DataTypes.STRING,
-    primaryEmail: DataTypes.STRING
+    primaryEmail: DataTypes.STRING,
+    phone: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',

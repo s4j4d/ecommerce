@@ -13,12 +13,22 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Product.belongsTo(models.Category) 
       Product.hasMany(models.Comment)
+      Product.hasMany(models.Seller)
+      Product.hasMany(models.CartItem)
+      Product.belongsToMany(models.WishList)
     }
   }
   Product.init({
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    rate: DataTypes.INTEGER
+    rate: DataTypes.INTEGER,
+    CategoryId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Category,
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Product',

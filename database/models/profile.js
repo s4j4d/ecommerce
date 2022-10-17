@@ -15,12 +15,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Profile.init({
-    phone: DataTypes.STRING,
     age: DataTypes.INTEGER,
     gender: DataTypes.ENUM,
     secondaryEmail: DataTypes.STRING,
     bouns: DataTypes.INTEGER,
-    about: DataTypes.STRING
+    about: DataTypes.STRING,
+    UserId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Profile',
