@@ -1,2 +1,2 @@
 # ecommerce
-lazycoders ecommerce project
+lazycoders ecommerce project with Nodejs , Express , Sequelize , Postgresql
