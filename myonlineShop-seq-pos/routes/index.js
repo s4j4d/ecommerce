@@ -8,20 +8,21 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 const routeAPIDefiner = [
-    ["/auth", require("./api/auth")],
-    ["/chat", require("./api/chat")],
+    ["/cart", require("./api/cart")],
 ]
 
-const routeViewsDefiner = [
-    ["/auth", require("./view/auth")],
-]
+// const routeViewsDefiner = [
+//     ["/auth", require("./view/auth")],
+// ]
 
 for(const route of routeAPIDefiner){
     app.use(`/api${route[0]}`, route[1]);
 }
 
-for(const route of routeViewsDefiner){
-    app.use(route[0], route[1]);
-}
+// for(const route of routeViewsDefiner){
+//     app.use(route[0], route[1]);
+// }
+
+
 
 module.exports = app;
