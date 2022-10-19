@@ -1,0 +1,146 @@
+/* ==========================================================================
+. Helpers:Global
+========================================================================== */
+
+.dir-rtl {
+    direction: rtl !important;
+}
+
+.dir-ltr {
+    direction: ltr !important;
+}
+
+.z-index-0 {
+    z-index: 0 !important;
+}
+
+.currency {
+    font-size: 11px;
+    font-weight: 700;
+    color: #7b7b7b;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px solid #a499ff;
+    color: #a499ff;
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: 1px solid #a499ff;
+        color: #a499ff;
+    }
+}
+
+.ui-box {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 45px 35px;
+
+    @media (max-width: 768px) {
+        padding: 20px 15px;
+    }
+
+    &.ui-box-specials {
+        box-shadow: unset;
+
+        .specials-container {
+            text-align: center;
+
+            img {
+                display: block;
+                margin: 0 auto 25px;
+                max-width: 200px;
+            }
+        }
+
+        .product-card {
+            border-radius: 10px;
+        }
+
+        .swiper-pagination {
+            .swiper-pagination-bullet-active {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .ui-box-title,
+    .ui-box-subtitle {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px 15px;
+        position: relative;
+
+        .ui-box-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 15px;
+            background-color: transparent;
+            border: 0;
+            border-radius: 7px;
+            padding: 0;
+            font-size: 21px;
+            font-weight: bold;
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    .ui-box-subtitle {
+        font-size: 13px;
+    }
+
+    .ui-box-content {
+        padding: 15px;
+    }
+
+    .ui-box-empty-content {
+        padding: 50px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .ui-box-empty-content-icon {
+            margin-bottom: 15px;
+
+            img {
+                max-width: 180px;
+            }
+        }
+
+        .ui-box-empty-content-message {
+            color: #666;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}
+
+.ui-sticky {
+    position: sticky;
+    z-index: 2;
+
+    &.ui-sticky-top {
+        top: 0;
+    }
+
+    &.ui-sticky-box {
+        background-color: #fff;
+        padding: 10px 0;
+    }
+}
+
+.magnifier {
+    background: #FCFCFD !important;
+    border: 1px solid #E6E8EC !important;
+    border-radius: 10px;
+    box-shadow: 0px 40px 32px -24px rgba(15, 15, 15, 0.12);
+}

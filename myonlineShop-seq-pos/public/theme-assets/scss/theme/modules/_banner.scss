@@ -1,0 +1,86 @@
+/* ==========================================================================
+. Modules:Banner
+========================================================================== */
+
+.banner-container {
+    a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .banner-image {
+        width: 100%;
+        transition: all .7s ease-out;
+    }
+
+    .banner-text {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        color: #212121;
+        padding: 10px 20px;
+        font-size: 18px;
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    a.banner-placement {
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+
+    &:hover {
+        .banner-image {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.banner-img {
+    a {
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    &.banner-side-main-slider {
+        a {
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        img {
+            display: none;
+        }
+
+        &.bg-position-right {
+            a {
+                background-position: right;
+            }
+        }
+
+        @media (max-width: 992px) {
+            a {
+                background-image: none !important;
+                height: auto !important;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
+    }
+}
