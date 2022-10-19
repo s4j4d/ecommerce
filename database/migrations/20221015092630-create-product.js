@@ -23,7 +23,7 @@ module.exports = {
       CategoryId: {
         type: Sequelize.INTEGER,
         references: {
-          model: Category,
+          model: "Categories",
           key: 'id'
         }
       },

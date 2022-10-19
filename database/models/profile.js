@@ -16,10 +16,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Profile.init({
     age: DataTypes.INTEGER,
-    gender: DataTypes.ENUM,
+    gender: DataTypes.STRING,
     secondaryEmail: DataTypes.STRING,
     bouns: DataTypes.INTEGER,
     about: DataTypes.STRING,
+    address: DataTypes.ARRAY(DataTypes.STRING),
     UserId: {
       type: DataTypes.INTEGER,
       references: {

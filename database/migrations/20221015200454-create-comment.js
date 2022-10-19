@@ -14,19 +14,19 @@ module.exports = {
         type: Sequelize.STRING
       },
       liked: {
-        type: Sequelize.ENUM([-1,0,1])
+        type: Sequelize.ENUM("-1","0","1")
       },
       ProductId: {
         type: Sequelize.INTEGER,
         references: {
-          model: Product,
+          model: "Products",
           key: 'id'
         }
       },
       UserId: {
         type: Sequelize.INTEGER,
         references: {
-          model: User,
+          model: "Users",
           key: 'id'
         }
       },

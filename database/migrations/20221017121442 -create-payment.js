@@ -2,24 +2,23 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Carts', {
+    await queryInterface.createTable('Payments', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      totalPrice: {
-        type: Sequelize.INTEGER
+      method: {
+        type: Sequelize.STRING
       },
-      tax: {
-        type: Sequelize.INTEGER
-      },
-      DiscountId: {
-        type: Sequelize.INTEGER
-      },
-      UserId: {
-        type: Sequelize.INTEGER
+      CartId: {
+        allowNull: true,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Carts",
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Carts');
+    await queryInterface.dropTable('Payments');
   }
 };

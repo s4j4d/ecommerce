@@ -16,7 +16,14 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       DeliveryState: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM("sended","deliver","not send","not deliver","sending")
+      },
+      UserId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

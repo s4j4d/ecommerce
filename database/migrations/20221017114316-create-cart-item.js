@@ -12,6 +12,21 @@ module.exports = {
       qty: {
         type: Sequelize.INTEGER
       },
+      ProductId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Products",
+          key: 'id'
+        }
+      },
+      CartId: {
+        allowNull: true,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Carts",
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

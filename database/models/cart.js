@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Cart.belongsTo(models.Discount)
       Cart.belongsTo(models.User)
       Cart.hasMany(models.CartItem)
+      Cart.hasMany(models.Payment)
     }
   }
   Cart.init({

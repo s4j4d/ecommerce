@@ -15,6 +15,13 @@ module.exports = {
       qty: {
         type: Sequelize.DECIMAL
       },
+      ProductId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Products",
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

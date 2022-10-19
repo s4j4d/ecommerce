@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       Product.hasMany(models.Comment)
       Product.hasMany(models.Seller)
       Product.hasMany(models.CartItem)
-      Product.belongsToMany(models.WishList)
+      Product.belongsToMany(models.User, {through: models.WishList})
     }
   }
   Product.init({

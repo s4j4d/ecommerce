@@ -11,12 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      WishList.belongsTo(models.User)
-      WishList.belongsToMany(models.Product)
+      // WishList.belongsTo(models.User)
+      // WishList.belongsToMany(models.Product)
     }
   }
   WishList.init({
-    ProductId: DataTypes.ARRAY,
+    ProductId: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      references: {
+        model: User,
+        key: 'id'
+      }
+    },
     UserId: {
       type: DataTypes.INTEGER,
       references: {

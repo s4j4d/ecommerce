@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Profile)
       User.hasOne(models.Cart)
       User.hasMany(models.Order)
+      User.belongsToMany(models.Product, {through: models.WishList})
       // User.belongsToMany(models.Permission , {through:models.GroupPermission})
     }
   }

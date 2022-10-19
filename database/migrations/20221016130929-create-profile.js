@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       gender: {
-        type: Sequelize.ENUM
+        type: Sequelize.STRING
       },
       secondaryEmail: {
         type: Sequelize.STRING
@@ -30,7 +30,7 @@ module.exports = {
       UserId: {
         type: Sequelize.INTEGER,
         references: {
-          model: User,
+          model: "Users",
           key: 'id'
         }
       },

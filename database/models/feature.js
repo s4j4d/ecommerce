@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Feature.belongsToMany(models.Category)
+      Feature.belongsToMany(models.Category, {through: "FC"})
     }
   }
   Feature.init({
