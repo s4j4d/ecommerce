@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Cart)
       User.hasMany(models.Order)
       User.belongsToMany(models.Product, {through: models.WishList})
+      User.belongsToMany(models.Address, { through: "UA" });
       // User.belongsToMany(models.Permission , {through:models.GroupPermission})
     }
   }
@@ -23,10 +24,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     password: DataTypes.STRING,
     primaryEmail: DataTypes.STRING,
-    phone: DataTypes.INTEGER
+    phone: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
   });
   return User;
 };
+

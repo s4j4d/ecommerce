@@ -15,6 +15,9 @@ module.exports = {
       tax: {
         type: Sequelize.INTEGER
       },
+      status: {
+        type: Sequelize.ENUM("open", "checkout")
+      },
       DiscountId: {
         allowNull: true,
         type: Sequelize.INTEGER,
