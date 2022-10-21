@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init({
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    rate: DataTypes.INTEGER,
+    description: DataTypes.TEXT,
+    rate: DataTypes.FLOAT,
     CategoryId: {
       type: DataTypes.INTEGER,
       references: {

@@ -31,7 +31,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       addressType: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM(['Delivery', 'Billing', 'Unknown'])
       },
       createdAt: {
         allowNull: false,
