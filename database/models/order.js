@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
   Order.init({
     item: DataTypes.JSONB,    // move cart item here
     payState: DataTypes.BOOLEAN,
-    DeliveryState: DataTypes.ENUM,
+    DeliveryState: DataTypes.ENUM("sended","deliver","not send","not deliver","sending"),
     UserId: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: 'User',
         key: 'id'
       }
     },

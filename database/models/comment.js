@@ -17,18 +17,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   Comment.init({
     content: DataTypes.STRING,
-    liked: DataTypes.ENUM,
+    liked: DataTypes.ENUM("-1","0","1"),
     UserId: {
       type: DataTypes.INTEGER,
       references: {
-        model: User,
+        model: 'User',
         key: 'id'
       }
     },
     ProductId: {
       type: DataTypes.INTEGER,
       references: {
-        model: Product,
+        model: 'Product',
         key: 'id'
       }
     }
