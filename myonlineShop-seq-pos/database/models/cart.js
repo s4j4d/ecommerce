@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   Cart.init({
     totalPrice: DataTypes.INTEGER,
     tax: DataTypes.INTEGER,
+    status: DataTypes.ENUM("open", "checkout"),
     DiscountId: {
       type: DataTypes.INTEGER,
       references: {
