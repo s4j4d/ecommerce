@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING,
     city: DataTypes.STRING,
     pstalCode: DataTypes.INTEGER,
-    addressType: DataTypes.ENUM
+    addressType: DataTypes.ENUM(['Delivery', 'Billing', 'Unknown'])
   }, {
     sequelize,
     modelName: 'Address',
