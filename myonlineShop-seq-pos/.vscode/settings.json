@@ -10,5 +10,6 @@
             "username": "elham",
             "password": "elham1234"
         }
-    ]
+    ],
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }

@@ -113,3 +113,6 @@ const create_cart = async (req, res) => {
     res.status(500).send("something went wrong");
     }
 };
+
+
+module.exports = addToCart
