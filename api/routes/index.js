@@ -8,7 +8,7 @@ app.use(express.json());
 // app.use(cookieParser());
 
 const routeAPIDefiner = [
-    ["/cart", require("./cart")],
+    // ["/cart", require("./cartService")],
 ]
 
 // const routeViewsDefiner = [
@@ -16,7 +16,7 @@ const routeAPIDefiner = [
 // ]
 
 for(const route of routeAPIDefiner){
-    app.use(`/api${route[0]}`, route[1]);
+    // app.use(`/api${route[0]}`, route[1]);
 }
 
 // for(const route of routeViewsDefiner){
