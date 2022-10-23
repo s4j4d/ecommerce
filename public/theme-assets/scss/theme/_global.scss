@@ -1,0 +1,26 @@
+body {
+    background-color: $color-body;
+}
+
+.page-wrapper {
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $font-fa;
+    font-size: $font-base;
+
+    .page-content {
+        flex: 1 1 auto;
+        padding: 45px 0;
+
+        @media (max-width: 768px) {
+            padding: 25px 0;
+        }
+
+        &.page-auth {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
