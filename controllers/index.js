@@ -1,2 +1,4 @@
-// exports.cart = require("./api/cartController")
-exports.cart = require("./cartController-me")
+'use strict';
+module.exports = {
+    cartController : require("./cart.controller")
+}
