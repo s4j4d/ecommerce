@@ -1,6 +1,6 @@
 require('dotenv').config();
 const path = require("path")
-const config = require('./config');
+const config = require('./database/config/config');
 const express = require("express");
 
 const app = require("./api/routes");

@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   WishList.init({
     ProductId: {
-      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      // type: DataTypes.ARRAY(DataTypes.INTEGER),
+      type: DataTypes.INTEGER,
       references: {
         model: 'Product',
         key: 'id'
