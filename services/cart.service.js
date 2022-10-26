@@ -2,16 +2,13 @@
 const db = require("../database/models")
 
 class CartService {
-    getCart(){}
-
-    async addToCart(productDId){
+    async getCart(productDId) {
         try {
-            const getProductPriceById = await db.ProductDetail.findOne({
-                where: {id: productDId},
-                attributes: ['price'],
+            //for
+            const getProductPriceById = await db.Product.findOne({
+                where: { id: productDId },
                 include: {
-                    model: db.Product,
-                    attributes: []
+                    model: db.ProductDetail,
                 }
             })
             if (!getProductPriceById) {
@@ -23,7 +20,11 @@ class CartService {
             return error
         }
     }
-    removeFromCart(data){}
+
+    addToCart(productDId) {
+
+    }
+    removeFromCart(data) { }
 }
 
 module.exports = new CartService()
