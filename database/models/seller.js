@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Seller.belongsTo(models.User)
-      Seller.belongsTo(models.Product)
+      Seller.belongsTo(models.ProductDetail)
     }
   }
   Seller.init({
@@ -24,10 +24,10 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    ProductId: {
+    ProductDetailId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Product',
+        model: 'ProductDetail',
         key: 'id'
       }
     }

@@ -1,2 +1,32 @@
 /* Write your code here */
 /*# sourceMappingURL=custom.css.map */
+
+.myLogo{
+    padding-top: 0px !important;
+    padding-bottom: 3px !important;
+    background-color: #eea5ef !important;
+}
+.myLogo > .logo > img{
+    margin-bottom: 0px !important;
+}
+.myLogo > .logo > .logo-text{
+    font-size: 12 !important;
+    font-weight: 700;
+}
+
+.myPad-0{
+    padding: 0px !important;
+}
+
+.mySearch input, .mySearch button{
+    background-color: #f0f0f1 !important;
+}
+.mySearch i::before{
+    color: #9a9ea2;
+}
+
+.main-swiper-slider .main-swiper-slide a{
+    border-radius: 0px;
+    height: 400px;
+}
+

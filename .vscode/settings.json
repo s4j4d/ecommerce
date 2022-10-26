@@ -5,11 +5,10 @@
             "server": "localhost",
             "port": 5433,
             "driver": "PostgreSQL",
-            "name": "ecommerce",
-            "database": "eCommerce",
             "username": "elham",
+            "database": "eCommerce",
+            "name": "eCommercePostresql",
             "password": "elham1234"
         }
-    ],
-    "compile-hero.disable-compile-files-on-did-save-code": false
+    ]
 }

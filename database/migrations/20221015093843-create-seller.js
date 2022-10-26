@@ -15,10 +15,10 @@ module.exports = {
       qty: {
         type: Sequelize.DECIMAL
       },
-      ProductId: {
+      ProductDetailId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Products",
+          model: "ProductDetails",
           key: 'id'
         }
       },

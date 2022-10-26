@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       CartItem.belongsTo(models.Cart)
-      CartItem.belongsTo(models.Product)
+      CartItem.belongsTo(models.ProductDetail)
     }
   }
   CartItem.init({
@@ -24,10 +24,10 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    ProductId: {
+    ProductDetailId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Product',
+        model: 'ProductDetail',
         key: 'id'
       }
     }

@@ -1,14 +1,16 @@
 const express = require("express");
-// const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 
 const app = express();
 
 app.use(express.json());
 // app.use(express.urlencoded());
-// app.use(cookieParser());
+app.use(cookieParser());
 
 const routeAPIDefiner = [
-    // ["/cart", require("./cartService")],
+    ["/cart", require("./cart.route")],
+    ["/user", require("./user.route")],
+    ["/product", require("./product.route")],
 ]
 
 // const routeViewsDefiner = [
@@ -16,7 +18,7 @@ const routeAPIDefiner = [
 // ]
 
 for(const route of routeAPIDefiner){
-    // app.use(`/api${route[0]}`, route[1]);
+    app.use(`/api${route[0]}`, route[1]);
 }
 
 // for(const route of routeViewsDefiner){

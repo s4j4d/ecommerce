@@ -12,6 +12,14 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      supperId: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: "Categories",
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
