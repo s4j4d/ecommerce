@@ -1,0 +1,98 @@
+/* ==========================================================================
+. Modules:Shop
+========================================================================== */
+
+.listing-products {
+    position: relative;
+
+    .listing-products-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #efefef;
+        padding: 10px 0;
+
+        .listing-products-filter-container {
+            flex-grow: 1;
+        }
+
+        .listing-products-filter {
+            display: flex;
+            overflow: auto;
+            min-width: 768px;
+
+            .nav-tabs {
+                min-width: 768px;
+                border-bottom: 0;
+                overflow: auto;
+            }
+        }
+    }
+
+    .listing-products-content {
+        position: relative;
+    }
+
+    .listing-products-view {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    @media (max-width: 576px) {
+        .product-card {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .product-thumbnail {
+                flex: 0 0 30%;
+                padding-bottom: 10px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .product-card-body {
+                flex: 0 0 70%;
+
+                padding-top: 10px;
+
+                .product-price {
+                    margin-top: 20px;
+                }
+            }
+
+            .product-card-footer {
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+.category-item {
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background-color: #fff;
+        border-radius: 15px;
+        color: #212121;
+        padding: 20px;
+        min-height: 200px;
+
+        .category-img {
+            max-width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .category-title {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
