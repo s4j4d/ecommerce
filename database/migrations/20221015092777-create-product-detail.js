@@ -15,7 +15,7 @@ module.exports = {
       price: {
         type: Sequelize.FLOAT
       },
-      image: {
+      color: {
         type: Sequelize.STRING
       },
       ProductId: {

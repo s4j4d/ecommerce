@@ -3,56 +3,69 @@ const { v4: uuidv4 } = require('uuid');
 const { cartService } = require('../services');
 
 class CartController {
-  getCart(req, res) {
-    const cookie = req.cookies.cart;
-    res.status(200).send(cookie)
+  async getCart(req, res) {
+    // const cookie = JSON.parse(req.cookies.cart);
+    // // const idArr = ;
+
+    // const carts = await cartService.getCart(cookie.items)
+    // res.status(200).send(JSON.stringify(carts))
+
+    // const carts = await cartService.getCart(req)
+    const carts = await cartService.getCartItems(req)
+    res.status(200).send(JSON.stringify(carts))
   }
 
   async addToCart(req, res) {
-    const cookie = req.cookies.cart;
-    const item = req.body.items;
 
-    if (cookie === undefined) {
-      const randomID = uuidv4()
-      const cart = {
-        id: randomID,
-        items: [{
-          id: item.productDId,
-          count: 1,
-          price: productDetail.price,
-          totalPrice: productDetail.price
-        }]
-      }
-      res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
-      // console.log('cookie created successfully');
-      res.send(JSON.stringify(cart))
-    }
-    else {
-      const cart = JSON.parse(cookie)
-      const repetitiveId = cart.items.find((i) => i.id == item.productDId)
-      if (repetitiveId) {
-        repetitiveId.count += 1;
-        repetitiveId.totalPrice = repetitiveId.price * repetitiveId.count
-      }
-      else {
-        cart.items.push({ id: item.productDId, count: 1, price: productDetail.price, totalPrice: productDetail.price })
-      }
-      res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
-      // console.log('cookie exists', cookie);
-      res.send(JSON.stringify(cart))
-    }
-
+    const carts = await cartService.addToCart(req)
+    res.status(200).send(JSON.stringify(carts))
   }
+
+  // addToCart(req, res) {
+  //   const cookie = req.cookies.cart;
+  //   const item = req.body.items;
+
+  //   var value = BigInt("0x" + uuidv4().replace(/-/g, ""));
+  //   var decimal = value.toString();
+
+  //   if (cookie === undefined) {
+  //     const randomID = decimal
+  //     const cart = {
+  //       id: randomID,
+  //       items: [{
+  //         id: item.id,
+  //         count: 1
+  //       }]
+  //     }
+  //     res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
+  //     // console.log('cookie created successfully');
+  //     res.send(JSON.stringify(cart))
+  //   }
+  //   else {
+  //     const cart = JSON.parse(cookie)
+  //     const repetitiveId = cart.items.find((i) => i.id == item.id)
+  //     if (repetitiveId) {
+  //       repetitiveId.count += 1;
+  //     }
+  //     else {
+  //       cart.items.push({ id: item.id, count: 1 })
+  //     }
+  //     res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
+  //     // console.log('cookie exists', cookie);
+  //     res.send(JSON.stringify(cart))
+  //   }
+
+  // }
 
   removeFromCart(req, res) {
     const cookie = req.cookies.cart;
     const item = req.body.items;
     const cart = JSON.parse(cookie)
 
-    const repetitiveId = cart.items.find((i) => i.id == item.productDId)
+    const repetitiveId = cart.items.find((i) => i.id == item.id)
     if (repetitiveId) {
       if (repetitiveId.count <= 1) {
-        const index = cart.items.findIndex((object) => object.id === item.productDId);
+        const index = cart.items.findIndex((object) => object.id === item.id);
         cart.items.splice(index, 1)
       }
       else {

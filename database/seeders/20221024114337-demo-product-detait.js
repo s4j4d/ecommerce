@@ -33,7 +33,7 @@ module.exports = {
     {
       id: 4,
       ProductId: 1,
-      image: 'black',
+      color: 'black',
       qty: 4,
       price: 31000000,
       createdAt: new Date(),
@@ -42,7 +42,7 @@ module.exports = {
     {
       id: 5,
       ProductId: 1,
-      image: 'red',
+      color: 'red',
       qty: 4,
       price: 30000000,
       createdAt: new Date(),
