@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 const routeViewDefiner = [
     ['/product',require('./product.route')],
-    ['/login-form',require('./loginForm')],
+    ['/login-register',require('./loginRegister.route')],
 
 
 ]

@@ -1,3 +1,3 @@
-exports.getLoginForm =  require('./getLoginForm')
+exports.LoginRegister =  require('./loginRegister.controller')
 exports.ProductController =  require('./product.controller')
 
