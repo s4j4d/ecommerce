@@ -1,0 +1,28 @@
+/* ==========================================================================
+. Components:Breadcrumb
+========================================================================== */
+
+.breadcrumb {
+    .breadcrumb-item {
+        &::before {
+            display: none;
+        }
+
+        a {
+            display: inline-flex;
+            position: relative;
+            color: #212121;
+            text-decoration: none;
+            transition: all .2s ease-in-out;
+
+            &::after {
+                content: "\EA63";
+                font-family: $font-icon;
+            }
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}

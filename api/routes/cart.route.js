@@ -9,4 +9,8 @@ router.route("/")
     .delete(cartController.removeFromCart)
 
 
+router.route("/log")
+    .get(cartController.getCart)
+    .post(cartController.addToCartAfterLogin)
+
 module.exports = router;

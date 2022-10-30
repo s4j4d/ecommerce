@@ -1,0 +1,27 @@
+/* ==========================================================================
+    Reset
+========================================================================== */
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.simplebar-track {
+    &.simplebar-vertical {
+        width: 7px;
+        left: 0;
+        right: auto;
+    }
+
+    .simplebar-scrollbar {
+        &::before {
+            background-color: #efefef;
+            opacity: 1 !important;
+        }
+    }
+}
+
+.container {
+    max-width: 1320px;
+}

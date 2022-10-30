@@ -4,58 +4,64 @@ const { cartService } = require('../services');
 
 class CartController {
   async getCart(req, res) {
-    // const cookie = JSON.parse(req.cookies.cart);
-    // // const idArr = ;
-
-    // const carts = await cartService.getCart(cookie.items)
-    // res.status(200).send(JSON.stringify(carts))
-
-    // const carts = await cartService.getCart(req)
-    const carts = await cartService.getCartItems(req)
-    res.status(200).send(JSON.stringify(carts))
+    if (req?.cookies?.cart) {
+      const cookie = JSON.parse(req.cookies.cart);
+      // // const idArr = ;
+  
+      const carts = await cartService.getCart(cookie.items)
+      res.status(200).send(JSON.stringify(carts))
+    } else {
+      res.status(200).send([])
+    }
   }
 
-  async addToCart(req, res) {
+  addToCart(req, res) {
+    const cookie = req.cookies.cart;
+    const item = req.body.items;
 
-    const carts = await cartService.addToCart(req)
-    res.status(200).send(JSON.stringify(carts))
+    var value = BigInt("0x" + uuidv4().replace(/-/g, ""));
+    var decimal = value.toString() / (10 ** 30);
+
+    if (cookie === undefined) {
+      const randomID = decimal
+      const cart = {
+        id: randomID,
+        items: [{
+          id: item.id,
+          count: 1
+        }]
+      }
+      res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
+      // console.log('cookie created successfully');
+      res.send(JSON.stringify(cart))
+    }
+    else {
+      const cart = JSON.parse(cookie)
+      const repetitiveId = cart.items.find((i) => i.id == item.id)
+      if (repetitiveId) {
+        repetitiveId.count += 1;
+      }
+      else {
+        cart.items.push({ id: item.id, count: 1 })
+      }
+      res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
+      // console.log('cookie exists', cookie);
+      res.send(JSON.stringify(cart))
+    }
   }
 
-  // addToCart(req, res) {
-  //   const cookie = req.cookies.cart;
-  //   const item = req.body.items;
+  async addToCartAfterLogin(req, res) {
+    const user_id = req.body.userId  //jwt token
+    const item = req.body.items;
+    try {
+      const result = await cartService.addToCartAfterLogin(user_id, item.id)
+      res.send(result)
 
-  //   var value = BigInt("0x" + uuidv4().replace(/-/g, ""));
-  //   var decimal = value.toString();
+    } catch (error) {
+      res.send(error.message)
+    }
 
-  //   if (cookie === undefined) {
-  //     const randomID = decimal
-  //     const cart = {
-  //       id: randomID,
-  //       items: [{
-  //         id: item.id,
-  //         count: 1
-  //       }]
-  //     }
-  //     res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
-  //     // console.log('cookie created successfully');
-  //     res.send(JSON.stringify(cart))
-  //   }
-  //   else {
-  //     const cart = JSON.parse(cookie)
-  //     const repetitiveId = cart.items.find((i) => i.id == item.id)
-  //     if (repetitiveId) {
-  //       repetitiveId.count += 1;
-  //     }
-  //     else {
-  //       cart.items.push({ id: item.id, count: 1 })
-  //     }
-  //     res.cookie('cart', JSON.stringify(cart), { maxAge: 900000, httpOnly: true });
-  //     // console.log('cookie exists', cookie);
-  //     res.send(JSON.stringify(cart))
-  //   }
-
-  // }
+  }
 
   removeFromCart(req, res) {
     const cookie = req.cookies.cart;
