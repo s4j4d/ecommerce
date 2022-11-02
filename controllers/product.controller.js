@@ -3,11 +3,11 @@ const { productService } = require('../services');
 
 class ProductController {
 
-    getProduct = async (req, res) => {
+    async getProduct(req, res) {
         const productId = req.params.productId
 
         try {
-            // const similarProducts = await getSimmialarProduct(product.CategoryId)
+            const similarProducts = await productService.getSimmialarProduct(product.CategoryId)
             const product = await productService.findProduct(productId)
             console.log(product);
             console.log(product.ProductPictures);

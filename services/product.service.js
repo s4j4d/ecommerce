@@ -4,7 +4,7 @@ const { Product, ProductPicture, ProductDetail, Seller } = db
 
 class ProductService {
 
-    findProduct = async (productId) => {
+    async findProduct(productId) {
         const product = await Product.findOne({
             where: {
                 id: productId
@@ -26,7 +26,7 @@ class ProductService {
         return product
     }
 
-    getSimmialarProduct = async (categoryId) => {
+    async getSimmialarProduct(categoryId) {
         const similarProducts = await Product.findAll(
             {
                 where: {
