@@ -3,10 +3,9 @@ const config = require('../../database/config/config');
 const db = require('../../database/models')
 
 
-
 class Authentication {
 
-    async tokenVerify(req, res, next) {
+    async tokenVerify(req, req, next) {
         try {
             const token = req.cookies['access-token']
             const verificationResult = jwt.verify(token, config.secretkey)
