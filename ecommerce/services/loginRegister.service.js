@@ -7,14 +7,12 @@ const loginRegisterController = require('../controller/loginRegister.controller'
 class LoginRegisterService{
 
 
-    async loginRegister (userObj){
+    async loginRegisterService (phoneNumber){
         // const password = userObj.password
-        // const salt = bcrypt.genSalt(10)
-        // const hash = bcrypt.hash(password,salt)
-        const [user, created] = await db.User.findOrCreate({
-            where: { userObj }
+        // const hash = bcrypt.hash(password,10)
+        return  [user, created] = await db.User.findOrCreate({
+            where: { phone:phoneNumber }
           });
-          return created
         }   
     // async login(userObj){
     //         const password = userObj.password

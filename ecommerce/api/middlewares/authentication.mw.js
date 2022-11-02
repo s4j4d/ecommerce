@@ -1,33 +1,30 @@
 const jwt = require('jsonwebtoken')
-const axios = require('axios')
-const {createClient} = require('redis')
-
+const config = require('../../config.js')
+const db = require('../../models/index.js')
 
 
 
 class Authentication{
 
-     tokenVerify(req,req,next,token,secretkey){
+    async tokenVerify(req,req,next){
         try{
-        const result = jwt.verify(token,secretkey)
-        if(result){
-            req.user = result
-            next()
-        }
-        else 
-            return res.status(400).send({error:'not found '})
+        const token = req.cookies['access-token']
+        const verificationResult = jwt.verify(token,config.secretkey)
+        const user = await db.User.findOne({
+            where:{
+                username:verificationResult.username
+            },
+            attributes:{
+                exclude:['password']
+            }
+        })
+        req.user = user
+        next()
         
     }catch(error){
-        return res.status(500).send({error:error.message}) 
+        return res.send({error:error.message})
     }
 }
-
-    async phoneAuthentication(){
-        const redis =  createClient()
-        const rand = '123456'
-        await redis.setEx()
-        next()
-    }
 }
 
 

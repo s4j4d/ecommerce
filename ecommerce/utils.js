@@ -6,7 +6,7 @@ class Utils{
 
     tokenGenerator(userObj){
         
-        return token = jwt.sign({username:userObj.username,password:userObj.password},config.secretkey , { algorithm: 'HS256' } , {expiresIn:'1h'})
+        return token = jwt.sign({username:userObj.username},config.secretkey , { algorithm: 'HS256' } , {expiresIn:'24h'})
     }
 }
 
