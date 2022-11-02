@@ -12,6 +12,8 @@ router.use(urlencoded())
 router.get('/', userController.loginRegister)
 // router.get('/confirmation', userController.phoneAuthentication)
 // router.get('/confirmation' ,Authentication.tokenVerify)
-// router.get('/confirmation' ,Authentication.phoneAuthentication)???
+
+router.get('/confirmation', Authentication.phoneAuthenticationGet)
+router.post('/confirmation', Authentication.phoneAuthenticationPost)
 
 module.exports = router;

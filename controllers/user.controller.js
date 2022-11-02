@@ -16,14 +16,19 @@ class UserController {
             return res.render('error', { error: error.message })
         }
     }
-    async phoneAuthentication(req, res) {
+    async phoneAuthenticationGet(req, res) {
         const redis = createClient()
-        await redis.setEx(req.body.phone - email, 3600, rand)
-        await axios.post('https://www.raygansms.com/api/smsAPI/SendMessag', {
-            Message: 'hello',
-            Mobiles: ["09358999169"],
-            SendDateInTimeStamp: new Date().getTime()
-        }, { headers: { 'Authorization': 'BasicbGF6eWNvZGVyczoyMjQ1MzcxMg==' } })
+        const randString = utils.randStringGenerator(6)
+        await redis.setEx(req.body.phone - email, 3600, randString)
+        const result = await axios.post('https://ippanel.com/api/select', {
+            "op": "send",
+            "uname": "lazycoders",
+            "pass": "22453712code",
+            "message": "hello",
+            "from": "5000",
+            "to": ["09127374700"],
+            "time": new Date().getTime()
+        })
     }
 
     addUser() { }
