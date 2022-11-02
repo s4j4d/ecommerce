@@ -15,8 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Seller.init({
-    price: DataTypes.INTEGER,
-    qty: DataTypes.INTEGER,
     UserId: {
       type: DataTypes.INTEGER,
       references: {
@@ -24,6 +22,50 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
+    owner: {
+      type: DataTypes.INTEGER,
+      reference: {
+        model: 'User',
+        key: 'id'
+      }
+    },
+    Shopname: DataTypes.STRING,
+    satisfactionrate: {
+      type: DataTypes.FLOAT,
+      validate: {
+        max: 100,
+        min: 0
+      }
+    },
+    rejectionrate: {
+      type: DataTypes.FLOAT,
+      validate: {
+        max: 100,
+        min: 0
+      }
+    },
+    reliability: {
+      type: DataTypes.FLOAT,
+      validate: {
+        max: 100,
+        min: 0
+      }
+    },
+    sendontimerate: {
+      type: DataTypes.FLOAT,
+      validate: {
+        max: 100,
+        min: 0
+      }
+    },
+    performance: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return (this.rejectionrate * 0.3 + this.reliability * 0.4 + this.sendontimerate * 0.3) / 100 * 5
+      }
+    },
+    price: DataTypes.INTEGER,
+    qty: DataTypes.INTEGER,
     ProductDetailId: {
       type: DataTypes.INTEGER,
       references: {

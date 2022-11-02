@@ -1,0 +1,31 @@
+/* ==========================================================================
+. Components:Pagination
+========================================================================== */
+
+.pagination {
+    .page-item {
+        margin-left: 15px;
+
+        &:last-child {
+            margin-left: 0;
+        }
+
+        .page-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: #212121;
+            padding: 0;
+        }
+
+        &.active {
+            .page-link {
+                color: #fff;
+                cursor: default;
+            }
+        }
+    }
+}

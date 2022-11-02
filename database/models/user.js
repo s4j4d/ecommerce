@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Order)
       User.belongsToMany(models.Product, { through: models.WishList })
       User.belongsToMany(models.Address, { through: "UA" });
-      // User.belongsToMany(models.Permission , {through:models.GroupPermission})
+      User.belongsToMany(models.Permission , {through:models.GroupPermission})
     }
   }
   User.init({

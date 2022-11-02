@@ -1,0 +1,13 @@
+extends train.pug 
+
+
+block title 
+    title login-form 
+
+
+block content 
+    form(action="./login", method="post")
+
+        input#(type="email", name="email-input" ,placeholder ="Email") 
+        input#(type="password", name="password-input" , placeholder = "Password")
+        input(type="submit", value="Enter")
