@@ -1,0 +1,187 @@
+/* ==========================================================================
+. Components:Nav
+========================================================================== */
+
+.nav {
+
+    .nav-item {
+
+        &.mega-menu-btn,
+        &.dropdown-btn {
+            position: relative;
+
+            .mega-menu,
+            .dropdown-list {
+                position: absolute;
+                background-color: #fff;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+                padding: 25px 15px;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                min-height: 450px;
+                max-height: 450px;
+                opacity: 0;
+                visibility: hidden;
+                transform: translate3d(0, 10px, 0);
+                transition: all .3s ease-in-out;
+
+                li {
+                    padding-right: 10px;
+                    padding-left: 10px;
+
+                    a {
+                        color: #7c7c7c;
+                        font-size: 13px;
+                        transition: all .2s ease-in-out;
+
+                        &:hover {
+                            padding-right: 5px;
+                            color: $color-primary !important;
+                        }
+                    }
+
+                    &.nav-item-parent {
+                        a {
+                            display: flex;
+                            align-items: center;
+                            font-size: 15px;
+                            font-weight: bold;
+                            color: #000;
+                            border-bottom: 1px solid #eee;
+
+                            &::after {
+                                content: "\EA64";
+                                font-family: $font-icon;
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    display: block;
+                    color: #000;
+                    line-height: 30px;
+                    text-decoration: none;
+                }
+
+                &.mega-menu-2-col {
+                    width: 400px;
+
+                    li {
+                        width: 50%;
+                    }
+                }
+
+                &.mega-menu-3-col {
+                    width: 600px;
+
+                    li {
+                        width: 33.333333333%;
+                    }
+                }
+            }
+
+            .dropdown-list {
+                min-height: 450px;
+                max-height: 450px;
+                width: 200px;
+            }
+
+            &:hover {
+
+                .mega-menu,
+                .dropdown-list {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+        }
+    }
+
+    .nav-link {
+        color: #212121;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &.nav-tabs {
+        border-bottom-color: #efefef;
+
+        .nav-link {
+            border: 0;
+            position: relative;
+            font-size: 14px;
+            font-weight: 600;
+
+            &.active {
+                background-color: transparent;
+                color: #212121;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: $color-primary;
+                    border-radius: 15px 15px 0 0;
+                }
+            }
+
+            .counter {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-color: #212121;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 11px;
+                font-weight: bold;
+            }
+        }
+
+        &.nav-pills {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .nav-link {
+                border-radius: 10px;
+                font-size: 13px;
+
+                &.active {
+                    background-color: $color-primary;
+                    color: $color-text-primary;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.nav-items-with-icon {
+        .nav-link {
+            display: flex;
+            align-items: center;
+
+            .nav-link-icon {
+                font-size: 18px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &.nav-light {
+        .nav-link {
+            color: #fff;
+        }
+    }
+}

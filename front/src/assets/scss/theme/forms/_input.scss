@@ -1,0 +1,18 @@
+/* ==========================================================================
+. Forms:Input
+========================================================================== */
+
+.form-control {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: unset !important;
+    min-height: 50px;
+    font-size: 14px;
+
+    &:hover,
+    &:focus {
+        background-color: #fff;
+        border: 1px solid #eee;
+    }
+}

@@ -1,0 +1,19 @@
+/* ==========================================================================
+. Components:Alert
+========================================================================== */
+
+.alert {
+    border: 0;
+    border-radius: 15px;
+
+    .btn-close {
+        box-shadow: unset;
+        outline: none;
+    }
+
+    &.banner-container {
+        padding: 0;
+        margin-bottom: 0;
+        border: 0;
+    }
+}

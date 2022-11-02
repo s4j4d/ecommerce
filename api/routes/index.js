@@ -1,11 +1,12 @@
-const express = require("express");
-const cookieParser = require('cookie-parser')
+'use strict';
+// const express = require("express");
+// const cookieParser = require('cookie-parser')
 
-const app = express();
+// const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 // app.use(express.urlencoded());
-app.use(cookieParser());
+// app.use(cookieParser());
 
 const routeAPIDefiner = [
     ["/cart", require("./cart.route")],
@@ -17,13 +18,15 @@ const routeAPIDefiner = [
 //     ["/auth", require("./view/auth")],
 // ]
 
-for(const route of routeAPIDefiner){
-    app.use(`/api${route[0]}`, route[1]);
-}
+const route = function (app) {
+    for (const route of routeAPIDefiner) {
+        app.use(`/api${route[0]}`, route[1]);
+    }
+};
 
 // for(const route of routeViewsDefiner){
 //     app.use(route[0], route[1]);
 // }
 
 
-module.exports = app;
+module.exports = route;

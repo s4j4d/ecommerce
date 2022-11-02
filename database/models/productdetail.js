@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     qty: DataTypes.INTEGER,
     price: DataTypes.FLOAT,
     color: DataTypes.STRING,
+    guarantee: DataTypes.STRING,
+    preparation: DataTypes.STRING,
     ProductId: {
       type: DataTypes.INTEGER,
       references: {
@@ -27,6 +29,13 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
+    SellerId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Seller',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'ProductDetail',

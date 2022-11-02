@@ -15,13 +15,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       rate: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT
       },
       picture: {
         type: Sequelize.STRING
+      },
+      features: {
+        type: Sequelize.JSONB
       },
       CategoryId: {
         type: Sequelize.INTEGER,

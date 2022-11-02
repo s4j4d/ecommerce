@@ -1,0 +1,36 @@
+/* ==========================================================================
+. Forms:File
+========================================================================== */
+
+.custom-input-file {
+    display: flex;
+    justify-content: center;
+
+    .custom-input-file-input {
+        display: none;
+
+        &:checked+.custom-input-file-label {
+            .label {
+                border-color: #00bfd6;
+                color: #00bfd6;
+            }
+        }
+    }
+
+    .custom-input-file-label {
+        .label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 2px solid #efefef;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 25px;
+            position: relative;
+            transition: all .2s ease-in-out;
+        }
+    }
+}

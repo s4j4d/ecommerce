@@ -1,0 +1,32 @@
+/* ==========================================================================
+. Components:Accordion
+========================================================================== */
+
+.accordion {
+    .accordion-item {
+        border: 0;
+        border-bottom: 1px solid #efefef;
+        border-radius: 0 !important;
+
+        .accordion-button {
+            font-weight: bold;
+            padding-bottom: 45px;
+            line-height: 30px;
+
+            &:focus {
+                border-color: #000;
+                box-shadow: none;
+            }
+        }
+
+        .accordion-body {
+            line-height: 2;
+        }
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: #000;
+        background-color: #fff;
+        box-shadow: none;
+    }
+}
