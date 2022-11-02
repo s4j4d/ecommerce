@@ -6,6 +6,6 @@ const {Authentication} = require('../middlewares')
 
 router.use(urlencoded())
 router.get('/', LoginRegister)
-router.get('/confirmation' ,Authentication.phoneAuthentication)
-
+router.get('/confirmation' ,Authentication.phoneAuthenticationGet)
+router.post('/confirmation',Authentication.phoneAuthenticationPost)
 module.exports = router
