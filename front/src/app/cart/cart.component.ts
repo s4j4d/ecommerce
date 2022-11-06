@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
 
@@ -7,6 +7,11 @@ import {Router} from '@angular/router';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
+
+@Injectable({
+  providedIn: 'root'
+})
+
 export class CartComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -15,6 +20,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.doGetCart()
+  }
+
+  getItem(){
+    return this.cartItems
   }
 
   doGetCart() {
