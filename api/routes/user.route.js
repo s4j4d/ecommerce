@@ -1,13 +1,15 @@
-'use strict';
+"use strict";
 const express = require("express");
 const router = express.Router();
 const { userController } = require("../../controllers");
 
-const { urlencoded } = require('express')
-const { Authentication } = require('../middlewares')
+const { urlencoded } = require("express");
+const { Authentication } = require("../middlewares");
 
-router.route("/profile")
-    .get(userController.getUserProfile)
+router
+  .route("/profile")
+  .get(userController.getUserProfile)
+  .post(userController.updateProfile);
 
 router.use(urlencoded())
 router.route('/')
