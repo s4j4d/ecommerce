@@ -232,10 +232,10 @@
                               <ng-template #treeNode let-data>
                                 <li class="mega-menu-category show">
                                     <a href="#">{{data.name}}</a>
-                                <ng-container *ngIf="data.subs">
+                                <ng-container *ngIf="data.subs[0]">
                                   <ul class="mega-menu">
                                     <ng-container
-                                      *ngFor="let item of data.subs"
+                                      *ngFor="let item of data.subs[0]"
                                       [ngTemplateOutlet]="treeNode"
                                       [ngTemplateOutletContext]="{ $implicit: item }">
                                     </ng-container>
