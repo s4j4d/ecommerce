@@ -222,8 +222,30 @@
                         <a href="#" class="vertical-menu-btn">دسته بندی کالاها <i class="ri-apps-fill icon"></i></a>
                         <div class="vertical-menu-items">
                             <ul>
+                                <ng-container
+                                  *ngFor="let node of categoryItems"
+                                  [ngTemplateOutlet]="treeNode"
+                                  [ngTemplateOutletContext]="{ $implicit: node }">
+                                </ng-container>
+                              </ul>
+
+                              <ng-template #treeNode let-data>
                                 <li class="mega-menu-category show">
-                                    <a href="#">کالای دیجیتال</a>
+                                    <a href="#">{{data.name}}</a>
+                                <ng-container *ngIf="data.subs">
+                                  <ul class="mega-menu">
+                                    <ng-container
+                                      *ngFor="let item of data.subs"
+                                      [ngTemplateOutlet]="treeNode"
+                                      [ngTemplateOutletContext]="{ $implicit: item }">
+                                    </ng-container>
+                                  </ul>
+                                </ng-container>
+                              </ng-template>
+
+                            <ul>
+                                <!-- <li class="mega-menu-category show">
+                                    <a href="#">{{ item.name }}</a>
                                     <ul class="mega-menu">
                                         <li class="parent"><a href="#">لوازم جانبی گوشی</a></li>
                                         <li><a href="#">کیف و کاور گوشی</a></li>
@@ -250,10 +272,10 @@
                                         <li><a href="#">آنر</a></li>
                                         <li><a href="#">نوکیا</a></li>
                                         <li class="parent"><a href="#">واقعیت مجازی</a></li>
-                                        <li class="parent"><a href="#">مچ بند و ساعت هوشمند</a></li>
-                                    </ul>
-                                </li>
-                                <li class="mega-menu-category">
+                                        <li class="parent"><a href="#">مچ بند و ساعت هوشمند</a></li> -->
+                                    <!-- </ul> -->
+                                <!-- </li> -->
+                                <!-- <li class="mega-menu-category">
                                     <a href="#">مد و پوشاک</a>
                                     <ul class="mega-menu">
                                         <li class="parent"><a href="#">لوازم جانبی گوشی</a></li>
@@ -285,7 +307,7 @@
                                 <li><a href="#">خانه و آشپزخانه</a></li>
                                 <li><a href="#">لوازم تحریر</a></li>
                                 <li><a href="#">ورزش و سفر</a></li>
-                                <li><a href="#">سوپرمارکت</a></li>
+                                <li><a href="#">سوپرمارکت</a></li> -->
                             </ul>
                         </div>
                     </div>

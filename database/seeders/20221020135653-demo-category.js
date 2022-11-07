@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('Categories', [{
-      name: 'kalaye digital',
+      name: 'کالای دیجیتال',
       createdAt: new Date(),
       updatedAt: new Date(),
       id: 1
@@ -20,7 +20,28 @@ module.exports = {
       name: 'safar',
       createdAt: new Date(),
       updatedAt: new Date()
-    }]);
+    },
+    {
+      id: 4,
+      name: 'Lavazem janebie mobile',
+      supperId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      id: 5,
+      name: 'power bank',
+      supperId: 4,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      id: 6,
+      name: 'toys',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }
+  ]);
   },
 
   async down (queryInterface, Sequelize) {

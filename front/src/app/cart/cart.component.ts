@@ -27,7 +27,6 @@ export class CartComponent implements OnInit {
   }
 
   doGetCart() {
-
     this.http.get('http://localhost:3000/api/cart')
     .subscribe((data: any) => {
       console.log(data);

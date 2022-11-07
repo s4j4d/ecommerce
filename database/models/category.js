@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Category.init({
     name: DataTypes.STRING,
-    // supperId: DataTypes.INTEGER
+    supperId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Category',
