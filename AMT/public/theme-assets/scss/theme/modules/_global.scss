@@ -1,0 +1,35 @@
+/* ==========================================================================
+. Modules:Global
+========================================================================== */
+
+.logo-container {
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $color-text-primary;
+        text-decoration: none;
+
+        img {
+            margin-bottom: 15px;
+            max-width: 100%;
+        }
+
+        .logo-text {
+            font-weight: 800;
+        }
+    }
+
+    &.logo-box {
+        min-width: 250px;
+        background-color: $color-primary;
+        padding: 15px 0;
+    }
+}
+
+.map-container {
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+}

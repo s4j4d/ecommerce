@@ -1,0 +1,17 @@
+/* ==========================================================================
+. Components:Dropdown
+========================================================================== */
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    padding: 25px 15px;
+    width: 200px;
+
+    .dropdown-item {
+        border-radius: 10px;
+    }
+}

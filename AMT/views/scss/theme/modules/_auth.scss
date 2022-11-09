@@ -1,0 +1,84 @@
+/* ==========================================================================
+. Modules:Auth
+========================================================================== */
+
+.auth-container {
+    min-width: 400px;
+    max-width: 400px;
+    margin: auto;
+
+    @media (max-width: 480px) {
+        min-width: 90%;
+        max-width: 90%;
+    }
+
+    .auth-box {
+        padding: 25px;
+    }
+
+    .auth-title {
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .btn-primary {
+        min-height: 50px;
+    }
+
+    .form-input-code-container {
+        direction: ltr;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #000;
+        padding-bottom: 10px;
+
+        .form-control {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .divider {
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    .verify-code-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding-right: 50px;
+
+        #timer--verify-code {
+            display: flex;
+            font-family: iranyekanfanum;
+            font-size: 20px;
+            position: absolute;
+            right: 0;
+
+            .jst-hours {
+                display: none;
+            }
+
+            &.jst-timeout+.send-again {
+                display: block;
+            }
+        }
+
+        .send-again {
+            display: none;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    }
+}

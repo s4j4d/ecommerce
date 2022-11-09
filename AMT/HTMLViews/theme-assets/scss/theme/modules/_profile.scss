@@ -1,0 +1,258 @@
+/* ==========================================================================
+. Modules:Profile
+========================================================================== */
+
+.profile-user-info {
+
+    .profile-detail {
+        padding: 15px;
+
+        .profile-avatar {
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+        }
+
+        .user-options {
+            border-bottom: 1px solid #dedede;
+            padding: 5px 0;
+
+            ul {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: 23px;
+                    bottom: 5px;
+                    width: 2px;
+                    height: 100%;
+                    background-color: #dedede;
+                }
+            }
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                padding-right: 40px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: 20px;
+                    top: 30%;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #dedede;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                &:last-child {
+                    &::before {
+                        top: unset;
+                        bottom: 0;
+                    }
+                }
+
+                .detail {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.order-tabs {
+    overflow-x: auto;
+
+    .nav-tabs {
+        min-width: 650px;
+    }
+}
+
+.user-order-items {
+    padding: 15px 0;
+
+    .user-order-item {
+        border: 1px solid #efefef;
+        border-radius: 15px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .user-order-item-header {
+            border-bottom: 1px solid #efefef;
+            padding: 10px 15px;
+            position: relative;
+
+            .user-order-detail-link {
+                color: #a499ff;
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
+        .user-order-meta {
+            display: inline-flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: bold;
+
+            &::before {
+                content: "\F059";
+                font-family: $font-icon;
+                margin-left: 15px;
+                font-size: 11px;
+                color: #979797;
+            }
+        }
+
+        .user-order-item-content {
+            padding: 10px 15px;
+
+            .user-order-item-products {
+                display: flex;
+                flex-wrap: wrap;
+                border-bottom: 1px solid #efefef;
+                padding: 15px 0;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    border-bottom: 0;
+                    margin-bottom: 0;
+                }
+
+                a {
+                    display: inline-flex;
+                    margin-left: 10px;
+
+                    &:last-child {
+                        margin-left: 0;
+                    }
+
+                    img {
+                        max-width: 64px;
+                    }
+                }
+            }
+
+            .cart-item {
+                @media (max-width: 992px) {
+                    flex-wrap: wrap;
+
+                    .cart-item--thumbnail {
+                        flex: 0 0 100%;
+                        margin-bottom: 20px;
+                    }
+
+                    .cart-item--detail {
+                        flex: 0 0 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-list {
+    .product-list-item {
+        display: flex;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .thumbnail {
+            margin-left: 15px;
+
+            a {
+                display: block;
+            }
+
+            img {
+                width: 60px;
+            }
+        }
+
+        .detail {
+            flex-grow: 1;
+
+            .title {
+                display: block;
+                height: 60px;
+                color: #212121;
+                text-decoration: none;
+            }
+
+            .action {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.tickets {
+    .ticket {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        max-width: 500px;
+
+        .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #eee;
+            border-radius: 50%;
+            margin-bottom: 15px;
+
+            &::before {
+                content: "\F264";
+                font-family: $font-icon;
+                font-size: 28px;
+            }
+
+            &.staff {
+                &::before {
+                    content: "\F254";
+                }
+            }
+        }
+
+        .text {
+            background-color: #f5f5f5;
+            border-radius: 15px;
+            padding: 15px;
+            line-height: 30px;
+        }
+
+        .date {
+            color: #979797;
+            font-size: 13px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        &.reply {
+            align-items: flex-end;
+            margin-right: auto;
+        }
+    }
+}

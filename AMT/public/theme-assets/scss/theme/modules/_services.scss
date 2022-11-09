@@ -1,0 +1,37 @@
+/* ==========================================================================
+. Modules:Services
+========================================================================== */
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .service-container {
+        margin-bottom: 20px;
+        padding: 0 20px;
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #212121;
+            text-decoration: none;
+
+            .service-icon {
+                margin-bottom: 15px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            .service-label {
+                font-size: 12px;
+                font-weight: 700;
+            }
+        }
+    }
+}

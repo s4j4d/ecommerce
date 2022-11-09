@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2962ff">
+    <meta name="msapplication-navbutton-color" content="#2962ff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2962ff">
+    <title>YektaKala | payment</title>
+    <link rel="stylesheet" href="./theme-assets/css/dependencies.css">
+    <link rel="stylesheet" href="./theme-assets/css/theme.css">
+    <link rel="stylesheet" href="./theme-assets/css/custom.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <header class="page-mini-header">
+            <div class="container">
+                <div class="d-flex justify-content-center pt-3 pb-5">
+                    <div class="logo-container">
+                        <a href="#" class="logo"><img src="./theme-assets/images/logo-dark.svg" width="150" alt=""></a>
+                    </div>
+                </div>
+                <ul class="checkout-steps">
+                    <li class="checkout-step-active">
+                        <a href="#"><span class="checkout-step-title" data-title="اطلاعات ارسال"></span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="checkout-step-title" data-title="پرداخت"></span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="checkout-step-title" data-title="اتمام خرید و ارسال"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-8 mb-lg-0 mb-4">
+                        <!-- start of box => payment-methods -->
+                        <div class="ui-box bg-white payment-methods mb-5">
+                            <div class="ui-box-title">شیوه پرداخت</div>
+                            <div class="ui-box-content">
+                                <!-- start of custom-radio-outline -->
+                                <div class="custom-radio-outline">
+                                    <input type="radio" class="custom-radio-outline-input" name="checkoutPayment"
+                                        id="checkoutPayment01">
+                                    <label for="checkoutPayment01" class="custom-radio-outline-label">
+                                        <span class="label">
+                                            <span class="icon"><i class="ri-secure-payment-fill"></i></span>
+                                            <span class="detail">
+                                                <span class="title">پرداخت اینترنتی</span>
+                                                <span class="subtitle">آنلاین با تمامی کارت‌های بانکی</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <!-- end of custom-radio-outline -->
+                                <!-- start of custom-radio-outline -->
+                                <div class="custom-radio-outline">
+                                    <input type="radio" class="custom-radio-outline-input" name="checkoutPayment"
+                                        id="checkoutPayment02">
+                                    <label for="checkoutPayment02" class="custom-radio-outline-label">
+                                        <span class="label">
+                                            <span class="icon"><i class="ri-wallet-3-fill"></i></span>
+                                            <span class="detail">
+                                                <span class="title">پرداخت از طریق کیف پول</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <!-- end of custom-radio-outline -->
+                                <!-- start of custom-radio-outline -->
+                                <div class="custom-radio-outline">
+                                    <input type="radio" class="custom-radio-outline-input" name="checkoutPayment"
+                                        id="checkoutPayment03">
+                                    <label for="checkoutPayment03" class="custom-radio-outline-label">
+                                        <span class="label">
+                                            <span class="icon"><i class="ri-coupon-4-fill"></i></span>
+                                            <span class="detail">
+                                                <span class="title">خرید اقساطی</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <!-- end of custom-radio-outline -->
+                            </div>
+                        </div>
+                        <!-- end of box => payment-methods -->
+                        <!-- start of box => coupon-gift -->
+                        <div class="ui-box bg-white mb-5">
+                            <div class="ui-box-title">تخفیف و کارت هدیه</div>
+                            <div class="ui-box-content">
+                                <div class="coupon-gift--container">
+                                    <!-- start of coupon -->
+                                    <div class="coupon">
+                                        <!-- start of coupon-form -->
+                                        <form action="#" class="coupon-form">
+                                            <!-- start of form-element -->
+                                            <div class="form-element-row with-btn">
+                                                <input type="text" class="form-control" placeholder="افزودن کد تخفیف">
+                                                <button class="btn btn-primary">ثبت</button>
+                                            </div>
+                                            <!-- end of form-element -->
+                                        </form>
+                                        <!-- end of coupon-form -->
+                                    </div>
+                                    <!-- end of coupon -->
+                                    <!-- start of divider -->
+                                    <div class="divider-container">
+                                        <span class="divider"></span>
+                                    </div>
+                                    <!-- end of divider -->
+                                    <!-- start of gift -->
+                                    <div class="gift">
+                                        <!-- start of gift-form -->
+                                        <form action="#" class="coupon-form">
+                                            <!-- start of form-element -->
+                                            <div class="form-element-row with-btn">
+                                                <input type="text" class="form-control" placeholder="افزودن کارت هدیه">
+                                                <button class="btn btn-primary">ثبت</button>
+                                            </div>
+                                            <!-- end of form-element -->
+                                        </form>
+                                        <!-- end of gift-form -->
+                                    </div>
+                                    <!-- end of gift -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of box => coupon-gift -->
+                        <div class="ui-box bg-white mb-3">
+                            <div class="ui-box-title">خلاصه سفارش</div>
+                            <div class="ui-box-content">
+                                <!-- start of nav-tabs -->
+                                <nav>
+                                    <div class="nav nav-tabs fa-num" id="shipping-type" role="tablist">
+                                        <button class="nav-link fs-6 fw-bold active" id="shipping-type-1-tab"
+                                            data-bs-toggle="tab" data-bs-target="#shipping-type-1" type="button"
+                                            role="tab" aria-controls="shipping-type-1" aria-selected="true">
+                                            <span class="d-flex flex-column align-items-start">
+                                                <span class="d-flex align-items-center">مرسوله 1</span>
+                                            </span>
+                                        </button>
+                                        <button class="nav-link fs-6 fw-bold" id="shipping-type-2-tab"
+                                            data-bs-toggle="tab" data-bs-target="#shipping-type-2" type="button"
+                                            role="tab" aria-controls="shipping-type-2" aria-selected="false">
+                                            <span class="d-flex flex-column align-items-start">
+                                                <span class="d-flex align-items-center">مرسوله 2</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </nav>
+                                <!-- end of nav-tabs -->
+                                <!-- start of tab-content -->
+                                <div class="tab-content" id="shipping-type-tabContent">
+                                    <!-- start of tab-pane -->
+                                    <div class="tab-pane py-4 fade show active" id="shipping-type-1" role="tabpanel"
+                                        aria-labelledby="shipping-type-1">
+                                        <!-- start of checkout-pack -->
+                                        <div class="checkout-pack">
+                                            <div class="checkout-pack-header fa-num">
+                                                <div class="checkout-pack-title"><span class="fs-7 text-muted">مبلغ
+                                                        مرسوله:</span> <span>42,420,000 <span
+                                                            class="currency">تومان</span></span></div>
+                                                <div class="checkout-pack-detail">
+                                                    <span>۳ کالا</span>
+                                                    <span class="divider"></span>
+                                                    <span>تامین کالا از ۱ روز کاری آینده</span>
+                                                </div>
+                                                <div class="checkout-pack-subtitle">
+                                                    <i class="ri-truck-fill icon"></i>
+                                                    ارسال عادی
+                                                </div>
+                                            </div>
+                                            <div class="checkout-pack-content">
+                                                <!-- Slider main container -->
+                                                <div class="swiper checkout-pack-swiper-slider mb-5">
+                                                    <!-- Additional required wrapper -->
+                                                    <div class="swiper-wrapper">
+                                                        <!-- Slides -->
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/01.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        هدفون بی سیم سامسونگ مدل Galaxy Buds Live
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #fad7c2;"></span>
+                                                                        <span class="ms-1">طلایی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/02.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        گوشی موبایل اپل مدل iPhone 13 A2634 دو سیم‌ کارت
+                                                                        ظرفیت 128 گیگابایت و رم 4 گیگابایت
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #000;"></span>
+                                                                        <span class="ms-1">مشکی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/03.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        دوربین دیجیتال کانن مدل EOS 4000D به همراه لنز
+                                                                        18-55 میلی متر DC III
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #000;"></span>
+                                                                        <span class="ms-1">مشکی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- If we need navigation buttons -->
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end of checkout-pack -->
+                                    </div>
+                                    <!-- end of tab-pane -->
+                                    <!-- start of tab-pane -->
+                                    <div class="tab-pane py-4 fade" id="shipping-type-2" role="tabpanel"
+                                        aria-labelledby="shipping-type-2-tab">
+                                        <!-- start of checkout-pack -->
+                                        <div class="checkout-pack">
+                                            <div class="checkout-pack-header fa-num">
+                                                <div class="checkout-pack-title"><span class="fs-7 text-muted">مبلغ
+                                                        مرسوله:</span> <span>42,420,000 <span
+                                                            class="currency">تومان</span></span></div>
+                                                <div class="checkout-pack-detail">
+                                                    <span>۳ کالا</span>
+                                                    <span class="divider"></span>
+                                                    <span>تامین کالا از ۱ روز کاری آینده</span>
+                                                </div>
+                                                <div class="checkout-pack-subtitle">
+                                                    <i class="ri-truck-fill icon"></i>
+                                                    ارسال عادی
+                                                </div>
+                                            </div>
+                                            <div class="checkout-pack-content">
+                                                <!-- Slider main container -->
+                                                <div class="swiper checkout-pack-swiper-slider mb-5">
+                                                    <!-- Additional required wrapper -->
+                                                    <div class="swiper-wrapper">
+                                                        <!-- Slides -->
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/01.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        هدفون بی سیم سامسونگ مدل Galaxy Buds Live
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #fad7c2;"></span>
+                                                                        <span class="ms-1">طلایی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/02.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        گوشی موبایل اپل مدل iPhone 13 A2634 دو سیم‌ کارت
+                                                                        ظرفیت 128 گیگابایت و رم 4 گیگابایت
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #000;"></span>
+                                                                        <span class="ms-1">مشکی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/03.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        دوربین دیجیتال کانن مدل EOS 4000D به همراه لنز
+                                                                        18-55 میلی متر DC III
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #000;"></span>
+                                                                        <span class="ms-1">مشکی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- If we need navigation buttons -->
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end of checkout-pack -->
+                                        <!-- start of checkout-pack -->
+                                        <div class="checkout-pack">
+                                            <div class="checkout-pack-header fa-num">
+                                                <div class="checkout-pack-title"><span class="fs-7 text-muted">مبلغ
+                                                        مرسوله:</span> <span>42,420,000 <span
+                                                            class="currency">تومان</span></span></div>
+                                                <div class="checkout-pack-detail">
+                                                    <span>۳ کالا</span>
+                                                    <span class="divider"></span>
+                                                    <span>تامین کالا از ۱ روز کاری آینده</span>
+                                                </div>
+                                                <div class="checkout-pack-subtitle">
+                                                    <i class="ri-truck-fill icon"></i>
+                                                    ارسال عادی
+                                                </div>
+                                            </div>
+                                            <div class="checkout-pack-content">
+                                                <!-- Slider main container -->
+                                                <div class="swiper checkout-pack-swiper-slider mb-5">
+                                                    <!-- Additional required wrapper -->
+                                                    <div class="swiper-wrapper">
+                                                        <!-- Slides -->
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/01.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        هدفون بی سیم سامسونگ مدل Galaxy Buds Live
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #fad7c2;"></span>
+                                                                        <span class="ms-1">طلایی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/02.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        گوشی موبایل اپل مدل iPhone 13 A2634 دو سیم‌ کارت
+                                                                        ظرفیت 128 گیگابایت و رم 4 گیگابایت
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #000;"></span>
+                                                                        <span class="ms-1">مشکی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="checkout-pack-item">
+                                                                <div class="checkout-pack-item-thumbnail">
+                                                                    <a href="#">
+                                                                        <img src="./theme-assets/images/carts/03.jpg"
+                                                                            alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="checkout-pack-item-detail">
+                                                                    <div class="checkout-pack-item-title">
+                                                                        دوربین دیجیتال کانن مدل EOS 4000D به همراه لنز
+                                                                        18-55 میلی متر DC III
+                                                                    </div>
+                                                                    <div class="checkout-pack-item-variant">
+                                                                        <span class="color"
+                                                                            style="background-color: #000;"></span>
+                                                                        <span class="ms-1">مشکی</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- If we need navigation buttons -->
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end of checkout-pack -->
+                                    </div>
+                                    <!-- end of tab-pane -->
+                                </div>
+                                <!-- end of tab-content -->
+                            </div>
+                        </div>
+                        <a href="#" class="link border-bottom-0"><i class="ri-arrow-right-s-fill"></i> بازگشت به شیوه ی
+                            ارسال</a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="ui-sticky ui-sticky-top">
+                            <!-- start of checkout-bill -->
+                            <div class="checkout-bill ui-box bg-white mb-5">
+                                <div class="checkout-bill-row">
+                                    <div class="checkout-bill-row-label">قیمت کالاها (۴)</div>
+                                    <div class="checkout-bill-row-value"><span class="fs-6">۴۲,۴۲۰,۰۰۰</span> <span
+                                            class="currency">تومان</span>
+                                    </div>
+                                </div>
+                                <div class="checkout-bill-row">
+                                    <div class="checkout-bill-row-label">تخفیف کالاها</div>
+                                    <div class="checkout-bill-row-value"><span class="fs-6 text-danger">۵,۰۰۰</span>
+                                        <span class="currency text-danger">تومان</span></div>
+                                </div>
+                                <div class="checkout-bill-row">
+                                    <div class="checkout-bill-row-label">جمع سبد خرید</div>
+                                    <div class="checkout-bill-row-value"><span class="fs-6">۴۲,۴۱۵,۰۰۰</span> <span
+                                            class="currency">تومان</span>
+                                    </div>
+                                </div>
+                                <div class="checkout-bill-row checkout-bill-note">
+                                    هزینه‌ی ارسال در ادامه بر اساس آدرس، زمان و نحوه‌ی ارسال انتخابی شما‌ محاسبه و به
+                                    این مبلغ اضافه خواهد شد
+                                </div>
+                                <div class="checkout-bill-row checkout-bill-action">
+                                    <a href="#" class="btn btn-block btn-primary">ادامه فرایند خرید</a>
+                                </div>
+                                <div class="checkout-bill-row checkout-bill-footer">
+                                    <div class="checkout-bill-row-label">
+                                        <span class="d-flex">
+                                            <i class="ri-copper-coin-fill text-warning me-1"></i>
+                                            <span class="fs-7">امتیاز باشگاه مشتریان</span>
+                                        </span>
+                                    </div>
+                                    <div class="checkout-bill-row-value">۱۵۰ <span
+                                            class="fs-7 fw-bold text-muted">امتیاز</span></div>
+                                </div>
+                            </div>
+                            <!-- end of checkout-bill -->
+                            <!-- start of widget -->
+                            <div class="widget p-0">
+                                <div class="widget-content widget--free-shipping">
+                                    <div class="free-shipping--detail">
+                                        <div class="title">ارسال رایگان سفارش</div>
+                                        <div class="subtitle">سفارش‌های بالای ۳۰۰ هزار تومان</div>
+                                    </div>
+                                    <div class="free-shipping--banner">
+                                        <img src="./theme-assets/images/theme/free-shipping--banner.png"
+                                            alt="ارسال رایگان سفارش">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <div class="container footer-logo-area">
+                <div class="d-flex align-items-start">
+                    <div class="logo-container logo-box">
+                        <a href="#" class="logo">
+                            <img src="./theme-assets/images/logo.svg" width="120" alt="">
+                            <span class="logo-text">بررسی،انتخاب و خرید آنلاین</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="d-flex align-items-center flex-wrap my-4">
+                    <span class="text-secondary me-2">تلفن پشتیبانی:</span>
+                    <a href="#" class="link border-bottom-0">۰۱۲۳۴۵۶۷ - ۰۲۱</a>
+                    <span class="fs-7 text-muted mx-2">|</span>
+                    <span>هفت روز هفته، ۲۴ ساعت شبانه روز پاسخگوی شما هستیم.</span>
+                </div>
+                <div class="services border-bottom py-4 mb-4">
+                    <div class="service-container">
+                        <a href="#" class="service">
+                            <span class="service-icon">
+                                <img src="./theme-assets/images/services/01.svg" alt="">
+                            </span>
+                            <span class="service-label">امکان تحویل اکسپرس</span>
+                        </a>
+                    </div>
+                    <div class="service-container">
+                        <a href="#" class="service">
+                            <span class="service-icon">
+                                <img src="./theme-assets/images/services/02.svg" alt="">
+                            </span>
+                            <span class="service-label">امکان پرداخت در محل</span>
+                        </a>
+                    </div>
+                    <div class="service-container">
+                        <a href="#" class="service">
+                            <span class="service-icon">
+                                <img src="./theme-assets/images/services/03.svg" alt="">
+                            </span>
+                            <span class="service-label">۷ روز هفته، ۲۴ ساعته</span>
+                        </a>
+                    </div>
+                    <div class="service-container">
+                        <a href="#" class="service">
+                            <span class="service-icon">
+                                <img src="./theme-assets/images/services/04.svg" alt="">
+                            </span>
+                            <span class="service-label">۷ روز ضمانت بازگشت کالا</span>
+                        </a>
+                    </div>
+                    <div class="service-container">
+                        <a href="#" class="service">
+                            <span class="service-icon">
+                                <img src="./theme-assets/images/services/05.svg" alt="">
+                            </span>
+                            <span class="service-label">ضمانت اصل بودن کالا</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="widget widget-footer">
+                            <div class="widget-title">با ما</div>
+                            <div class="widget-content widget-list">
+                                <ul>
+                                    <li><a href="#">اتاق خبر</a></li>
+                                    <li><a href="#">فروش در سایت</a></li>
+                                    <li><a href="#">فرصت های شغلی</a></li>
+                                    <li><a href="#">تماس با ما</a></li>
+                                    <li><a href="#">درباره ما</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="widget widget-footer">
+                            <div class="widget-title">خدمات مشتریان</div>
+                            <div class="widget-content widget-list">
+                                <ul>
+                                    <li><a href="#">پاسخ به پرسشهای متداول</a></li>
+                                    <li><a href="#">رویه های بازگرداندن کالا</a></li>
+                                    <li><a href="#">شرایط استفاده</a></li>
+                                    <li><a href="#">حریم خصوصی</a></li>
+                                    <li><a href="#">گزارش باگ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+                        <div class="widget widget-footer">
+                            <div class="widget-title">راهنمای خرید از سایت</div>
+                            <div class="widget-content widget-list">
+                                <ul>
+                                    <li><a href="#">نحوه ثبت سفارش</a></li>
+                                    <li><a href="#">رویه ارسال سفارش</a></li>
+                                    <li><a href="#">شیوه های پرداخت</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5">
+                        <div class="widget widget-footer mb-4">
+                            <div class="widget-title">با ما همراه باشید</div>
+                            <div class="widget-content widget-socials">
+                                <ul>
+                                    <li><a href="#"><i class="ri-facebook-circle-fill"></i></a></li>
+                                    <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
+                                    <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+                                    <li><a href="#"><i class="ri-telegram-fill"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget widget-footer">
+                            <div class="widget-title">از جدیدترین تخفیف ها باخبر شوید</div>
+                            <div class="widget-content widget-newsletter">
+                                <form action="#">
+                                    <div class="form-element-row with-btn">
+                                        <input type="text" class="form-control"
+                                            placeholder="آدرس ایمیل خود را وارد کنید">
+                                        <button class="btn btn-primary">ثبت</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="expandable-text pt-1" style="height: 100px;">
+                            <div class="expandable-text_text fa-num">
+                                <div class="fs-6 fw-bold mb-2">فروشگاه اینترنتی یکتاکالا بررسی، انتخاب و خرید آنلاین
+                                </div>
+                                <div class="fs-7 text-secondary text-justify">
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                                    گرافیک
+                                    است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای
+                                    شرایط فعلی
+                                    تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
+                                    زیادی
+                                    در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با
+                                    نرم
+                                    افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو
+                                    در زبان
+                                    فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+                                    راهکارها، و
+                                    شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و
+                                    جوابگوی سوالات
+                                    پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                                </div>
+                            </div>
+                            <div class="expandable-text-expand-btn justify-content-start text-sm">
+                                <span class="show-more active">
+                                    مشاهده بیشتر <i class="ri-arrow-down-s-line ms-2"></i>
+                                </span>
+                                <span class="show-less d-none">
+                                    بستن <i class="ri-arrow-up-s-line ms-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="trust-symbol">
+                            <a href="#">
+                                <img src="./theme-assets/images/symbol/01.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="./theme-assets/images/symbol/02.png" alt="">
+                            </a>
+                            <a href="#">
+                                <img src="./theme-assets/images/symbol/03.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy-right text-center text-muted py-3">
+                    استفاده از مطالب فروشگاه اینترنتی یکتاکالا فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه
+                    حقوق این
+                    سایت متعلق به echo_designer می‌باشد.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="./theme-assets/js/dependencies/jquery-3.6.0.min.js"></script>
+    <script src="./theme-assets/js/dependencies/bootstrap.bundle.min.js"></script>
+    <script src="./theme-assets/js/dependencies/bootstrap-slider.min.js"></script>
+    <script src="./theme-assets/js/dependencies/jquery.countdown.min.js"></script>
+    <script src="./theme-assets/js/dependencies/jquery.simple.timer.min.js"></script>
+    <script src="./theme-assets/js/dependencies/iziToast.min.js"></script>
+    <script src="./theme-assets/js/dependencies/fancybox.umd.js"></script>
+    <script src="./theme-assets/js/dependencies/nouislider.min.js"></script>
+    <script src="./theme-assets/js/dependencies/wNumb.js"></script>
+    <script src="./theme-assets/js/dependencies/remodal.min.js"></script>
+    <script src="./theme-assets/js/dependencies/select2.min.js"></script>
+    <script src="./theme-assets/js/dependencies/simplebar.min.js"></script>
+    <script src="./theme-assets/js/dependencies/swiper-bundle.min.js"></script>
+    <script src="./theme-assets/js/dependencies/zoomsl.min.js"></script>
+    <script src="./theme-assets/js/theme.js"></script>
+    <script src="./theme-assets/js/custom.js"></script>
+</body>
+
+</html>

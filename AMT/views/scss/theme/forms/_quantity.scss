@@ -1,0 +1,52 @@
+/* ==========================================================================
+. Forms:Quantity
+========================================================================== */
+
+.num-block {
+
+    .num-in {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 115px;
+        height: 50px;
+        border: 1px solid #efefef;
+        border-radius: 10px;
+
+        span {
+            display: block;
+            width: 30px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            font-size: 18px;
+
+            &.dis:before {
+                opacity: .3;
+            }
+
+            &.minus:before {
+                content: "\F1AF";
+                font-family: $font-icon;
+                color: #f44336;
+            }
+
+            &.plus:after {
+                content: "\EA13";
+                font-family: $font-icon;
+            }
+        }
+
+        input {
+            width: 32px;
+            height: 32px;
+            border: 0;
+            color: #000;
+            text-align: center;
+            padding: 0;
+            outline: none;
+        }
+    }
+}

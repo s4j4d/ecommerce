@@ -1,0 +1,37 @@
+/* ==========================================================================
+. Components:Fancybox
+========================================================================== */
+
+.fancybox__container {
+    .fancybox__backdrop {
+        background-color: #fff;
+    }
+
+    .fancybox__toolbar {
+        background: unset;
+
+        .carousel__button {
+            color: #000;
+
+            svg {
+                filter: unset;
+            }
+        }
+
+        .fancybox__counter {
+            font-family: $font-fa-num;
+            color: #000;
+            text-shadow: unset;
+        }
+    }
+
+    .fancybox__carousel {
+        button {
+            color: #000;
+
+            svg {
+                filter: unset;
+            }
+        }
+    }
+}

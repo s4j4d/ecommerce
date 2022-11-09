@@ -1,0 +1,69 @@
+/* ==========================================================================
+. Components:Btn
+========================================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: unset !important;
+
+    &.btn-link {
+        color: #212121;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &.btn-light {
+        background-color: #fff;
+        color: #212121;
+    }
+
+    &.btn-outline-light {
+        background-color: #fff;
+        border: 1px solid #efefef;
+        color: #212121;
+    }
+
+    &.btn-primary {
+        background-color: $color-primary;
+        color: $color-text-primary;
+    }
+
+    &.btn-outline-primary {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-text-primary;
+        }
+    }
+
+    &.btn-outline-danger {
+        background-color: #fff;
+        border: 1px solid #dc3545;
+        color: #dc3545;
+
+        &:hover {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    }
+
+    &.btn-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    &.btn-block {
+        width: 100%;
+    }
+}

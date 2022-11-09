@@ -1,0 +1,45 @@
+/* ==========================================================================
+. Forms:Select
+========================================================================== */
+
+.select2-container {
+    z-index: 12;
+
+    .select2-selection {
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        box-shadow: unset !important;
+        min-height: 50px;
+        font-size: 14px;
+
+        .select2-selection__rendered {
+            height: 100%;
+            line-height: 50px;
+        }
+
+        .select2-selection__arrow {
+            height: 100%;
+            left: 15px !important;
+        }
+    }
+}
+
+.select2-dropdown {
+    background-color: #fff;
+    border: 1px solid #eee;
+    font-family: $font-fa;
+
+    .select2-search__field {
+        background-color: #fff;
+        border: 1px solid #eee !important;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .select2-results__options {
+        .select2-results__option {
+            font-size: 13px;
+        }
+    }
+}
