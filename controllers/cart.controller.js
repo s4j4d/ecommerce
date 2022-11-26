@@ -4,7 +4,6 @@ const { cartService } = require('../services');
 
 class CartController {
   async getCart(req, res) {
-    i
     if (req?.cookies?.cart) {
       const cookie = JSON.parse(req.cookies.cart);
       // // const idArr = ;

@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const { userController } = require("../../controllers");
+
 const { urlencoded } = require("express");
 const { Authentication } = require("../middlewares");
 
@@ -10,12 +11,8 @@ router
   .get(userController.getUserProfile)
   .post(userController.updateProfile);
 
-router.use(urlencoded());
-router.get("/", userController.loginRegister);
-// router.get('/confirmation', userController.phoneAuthentication)
-// router.get('/confirmation' ,Authentication.tokenVerify)
-
-// router.get('/confirmation', Authentication.phoneAuthenticationGet)
-// router.post('/confirmation', Authentication.phoneAuthenticationPost)
+router.use(urlencoded())
+router.route('/')
+    .get(userController.loginRegister)
 
 module.exports = router;
